@@ -6,7 +6,7 @@ def _scala_toolchain_impl(ctx):
       singlejar = ctx.executable.singlejar,
       ijar = ctx.executable.ijar,
       zipper = ctx.executable.zipper,
-      scalac = ctx.executable.scalac,
+      scalac = ctx.attr.scalac,
       default_classpath = ctx.attr.default_classpath,
       repl_runtime_deps = ctx.attr.repl_runtime_deps,
   )

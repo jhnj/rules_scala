@@ -255,10 +255,12 @@ StatsfileOutput: {statsfile_output}
   if len(scalac_jvm_flags) == 0:
     scalac_jvm_flags = toolchain.scalac_jvm_flags
 
+  _, _, input_manifests = ctx.resolve_command(tools = [toolchain.scalac])
   ctx.actions.run(
       inputs = ins,
       outputs = outs,
-      executable = toolchain.scalac,
+      executable = toolchain.scalac.files_to_run.executable,
+      input_manifests = input_manifests,
       mnemonic = "Scalac",
       progress_message = "scala %s" % ctx.label,
       execution_requirements = {"supports-workers": "1"},
