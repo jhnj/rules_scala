@@ -1,4 +1,4 @@
-load("//scala:scala.bzl", "scala_binary", "scala_library")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_binary", "scala_library")
 load("//twitter_scrooge:twitter_scrooge.bzl", "scrooge_scala_library")
 load("//thrift:thrift.bzl", "thrift_library")
 

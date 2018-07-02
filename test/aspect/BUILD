@@ -1,6 +1,6 @@
 load(":aspect.bzl", "aspect_test")
 load(
-    "//scala:scala.bzl",
+    "@io_bazel_rules_scala//scala:scala.bzl",
     "scala_library",
     "scala_test",
     "scala_junit_test",

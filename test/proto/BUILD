@@ -1,5 +1,5 @@
 load(
-    "//scala_proto:scala_proto.bzl",
+    "@io_bazel_rules_scala//scala_proto:scala_proto.bzl",
     "scalapb_proto_library",
 )
 

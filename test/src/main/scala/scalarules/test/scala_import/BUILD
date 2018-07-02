@@ -1,5 +1,5 @@
-load("//scala:scala.bzl", "scala_library", "scala_specs2_junit_test")
-load("//scala:scala_import.bzl", "scala_import")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_specs2_junit_test")
+load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 #Many jars
 scala_import(

@@ -1,4 +1,4 @@
-load("//scala:scala.bzl", "scala_binary")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_binary")
 
 scala_binary(
     name = "classpath_resource",

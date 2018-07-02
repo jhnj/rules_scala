@@ -1,4 +1,4 @@
-load("//scala:scala.bzl", "scala_library")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
 
 #TODO the way it SHOULD work (but isn't currently) is that
 # the source_jar target should make available a compiled jar,

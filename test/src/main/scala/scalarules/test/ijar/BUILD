@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-load("//scala:scala.bzl", "scala_library", "scala_test", "scala_binary")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_test", "scala_binary")
 
 scala_library(
     name = "user",

@@ -1,4 +1,4 @@
-load("//scala:scala.bzl", "scala_library")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
 
 scala_library(
     name = "mixed_language_source_jar",
