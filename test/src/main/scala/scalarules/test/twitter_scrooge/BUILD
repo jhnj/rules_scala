@@ -1,6 +1,6 @@
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_binary", "scala_library")
-load("//twitter_scrooge:twitter_scrooge.bzl", "scrooge_scala_library")
-load("//thrift:thrift.bzl", "thrift_library")
+load("@io_bazel_rules_scala//twitter_scrooge:twitter_scrooge.bzl", "scrooge_scala_library")
+load("@io_bazel_rules_scala//thrift:thrift.bzl", "thrift_library")
 
 scrooge_scala_library(
     name = "scrooge1",
@@ -10,7 +10,7 @@ scrooge_scala_library(
         ":scrooge2_b",
         ":scrooge3",
     ],
-    deps = ["//test/src/main/scala/scalarules/test/twitter_scrooge/thrift"],
+    deps = ["//src/main/scala/scalarules/test/twitter_scrooge/thrift"],
 )
 
 scrooge_scala_library(
@@ -20,7 +20,7 @@ scrooge_scala_library(
         ":scrooge3",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
     ],
 )
 
@@ -31,21 +31,21 @@ scrooge_scala_library(
         ":scrooge3",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
     ],
 )
 
 scrooge_scala_library(
     name = "scrooge2_b_imp",
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b_imp",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b_imp",
     ],
 )
 
 scrooge_scala_library(
     name = "scrooge3",
     visibility = ["//visibility:public"],
-    deps = ["//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3"],
+    deps = ["//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3"],
 )
 
 scrooge_scala_library(
@@ -55,8 +55,8 @@ scrooge_scala_library(
         ":scrooge3",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
     ],
 )
 
@@ -67,7 +67,7 @@ scrooge_scala_library(
         ":scrooge2",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift4",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift4",
     ],
 )
 
@@ -78,7 +78,7 @@ scrooge_scala_library(
         ":scrooge4",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift4:thrift4a",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift4:thrift4a",
     ],
 )
 
@@ -86,7 +86,7 @@ scrooge_scala_library(
     name = "scroogebarejar1",
     visibility = ["//visibility:public"],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_1",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_1",
     ],
 )
 
@@ -94,7 +94,7 @@ scrooge_scala_library(
     name = "scroogebarejar2",
     visibility = ["//visibility:public"],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_2",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_2",
     ],
 )
 
@@ -106,7 +106,7 @@ scrooge_scala_library(
         ":scroogebarejar2",
     ],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts",
     ],
 )
 
@@ -140,7 +140,7 @@ scala_library(
     name = "justscrooge3_import",
     srcs = ["JustScrooge3.scala"],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3:thrift3_import",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2/thrift3:thrift3_import",
     ],
 )
 

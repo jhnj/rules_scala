@@ -1,4 +1,4 @@
-load("//tut_rule:tut.bzl", "scala_tut_doc")
+load("@io_bazel_rules_scala//tut_rule:tut.bzl", "scala_tut_doc")
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
 
 scala_library(

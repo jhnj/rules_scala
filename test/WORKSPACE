@@ -5,7 +5,7 @@ local_repository(
     path = "../"
 )
 
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 
 scala_repositories()
 
@@ -17,11 +17,11 @@ load("@io_bazel_rules_scala//tut_rule:tut.bzl", "tut_repositories")
 
 tut_repositories()
 
-#load("@io_bazel_rules_scala//jmh:jmh.bzl", "jmh_repositories")
+load("@io_bazel_rules_scala//jmh:jmh.bzl", "jmh_repositories")
 
-#jmh_repositories()
+jmh_repositories()
 
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala_proto:scala_proto.bzl", "scala_proto_repositories")
+load("@io_bazel_rules_scala//scala_proto:scala_proto.bzl", "scala_proto_repositories")
 
 scala_proto_repositories()
 
@@ -29,7 +29,7 @@ load("@io_bazel_rules_scala//specs2:specs2_junit.bzl", "specs2_junit_repositorie
 
 specs2_junit_repositories()
 
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala:scala_cross_version.bzl", "scala_mvn_artifact")
+load("@io_bazel_rules_scala//scala:scala_cross_version.bzl", "scala_mvn_artifact")
 
 # test adding a scala jar:
 maven_jar(
@@ -92,11 +92,11 @@ filegroup(
     path = "third_party/test/new_local_repo",
 )
 
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
+load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 
 scala_register_toolchains()
 
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala:scala_maven_import_external.bzl", "scala_maven_import_external", "java_import_external")
+load("@io_bazel_rules_scala//scala:scala_maven_import_external.bzl", "scala_maven_import_external", "java_import_external")
 
 scala_maven_import_external(
     name = "com_google_guava_guava_21_0",
@@ -110,7 +110,7 @@ scala_maven_import_external(
 # in order to allow for other jvm-language imports (e.g. scala_import)
 # the 3rd-party dependency below is using the java_import_external macro
 # in order to make sure no regression with the original java_import_external
-load("@io_bazel_rules_scala@io_bazel_rules_scala//scala:scala_maven_import_external.bzl", "java_import_external")
+load("@io_bazel_rules_scala//scala:scala_maven_import_external.bzl", "java_import_external")
 
 java_import_external(
     name = "org_apache_commons_commons_lang_3_5_without_file",

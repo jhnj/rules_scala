@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-import "test/proto2/test.proto";
-import "test/proto/test2.proto";
-import "test/proto/test3.proto";
+import "proto2/test.proto";
+import "proto/test2.proto";
+import "proto/test3.proto";
 
 option java_package = "test.proto";
 

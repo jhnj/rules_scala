@@ -19,7 +19,7 @@ object ScalaLibResources {
 
   def getFarewells = get("byes")
 
-  def getData = get("/test/data/some.txt")
+  def getData = get("/data/some.txt")
 
   private def get(s: String): List[String] =
     scala.io.Source

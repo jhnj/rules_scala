@@ -161,22 +161,23 @@ scala_library(
     name = "ScalaLibResources",
     srcs = ["src/main/scala/scalarules/test/ScalaLibResources.scala"],
     resources = [
-        "//test/data:some.txt",
-        "//test/src/main/resources/scalarules/test:byes",
-        "//test/src/main/resources/scalarules/test:hellos",
+        "//data:some.txt",
+        "//src/main/resources/scalarules/test:byes",
+        "//src/main/resources/scalarules/test:hellos",
     ],
 )
 
 scala_library(
     name = "ResourcesStripScalaLib",
     srcs = ["src/main/scala/scalarules/test/ResourcesStripScalaLib.scala"],
-    resource_strip_prefix = "test/",
+    # TODO
+    #resource_strip_prefix = "test/",
     resources = [
-        "//test/data:foo.txt",
-        "//test/data:more.txt",
-        "//test/src/main/resources/scalarules/test:generated-hello",
-        "//test/src/main/resources/scalarules/test:more-byes",
-        "//test/src/main/resources/scalarules/test:more-hellos",
+        "//data:foo.txt",
+        "//data:more.txt",
+        "//src/main/resources/scalarules/test:generated-hello",
+        "//src/main/resources/scalarules/test:more-byes",
+        "//src/main/resources/scalarules/test:more-hellos",
     ],
 )
 
@@ -355,7 +356,7 @@ scala_specs2_junit_test(
     "ScalaLibBinary",
     "ResourcesStripScalaBinary",
     "ScalaBinary_dependent_on_binary_with_java",
-    "//test/src/main/scala/scalarules/test/classpath_resources:classpath_resource",
+    "//src/main/scala/scalarules/test/classpath_resources:classpath_resource",
 ]]
 
 # Make sure scala_binary works in genrule environment
@@ -377,8 +378,8 @@ scala_specs2_junit_test(
     name = "data_location_expansion",
     size = "small",
     srcs = ["src/main/scala/scalarules/test/location_expansion/LocationExpansionTest.scala"],
-    data = ["//src/java/com/google/devtools/build/lib:worker"],
-    jvm_flags = ["-Dlocation.expanded=$(location //src/java/com/google/devtools/build/lib:worker)"],
+    data = ["@io_bazel_rules_scala//src/java/com/google/devtools/build/lib:worker"],
+    jvm_flags = ["-Dlocation.expanded=$(location @io_bazel_rules_scala//src/java/com/google/devtools/build/lib:worker)"],
     suffixes = ["Test"],
 )
 
@@ -474,26 +475,26 @@ py_binary(
     srcs = ["jar_lister.py"],
 )
 
-sh_test(
-    name = "no_sig",
-    srcs = ["no_sigs.sh"],
-    args = [
-        "$(location //test:jar_lister)",
-        "$(location //test:ScalaBinary_with_fake_deploy.jar)",
-    ],
-    data = [
-        ":ScalaBinary_with_fake_deploy.jar",
-        ":jar_lister",
-    ],
-)
+#sh_test(
+#    name = "no_sig",
+#    srcs = ["no_sigs.sh"],
+#    args = [
+#        "$(location //test:jar_lister)",
+#        "$(location //test:ScalaBinary_with_fake_deploy.jar)",
+#    ],
+#    data = [
+#        ":ScalaBinary_with_fake_deploy.jar",
+#        ":jar_lister",
+#    ],
+#)
 
 scala_binary(
     name = "ScalaBinary_with_service_manifest_srcs",
     srcs = ["A.scala"],
     main_class = "scalarules.test.A",
     deps = [
-        "//test/example_jars:example_jar1",
-        "//test/example_jars:example_jar2",
+        "//example_jars:example_jar1",
+        "//example_jars:example_jar2",
     ],
 )
 
@@ -507,7 +508,7 @@ scala_binary(
 scala_library(
     name = "lib_with_scala_proto_dep",
     srcs = ["TestServer.scala"],
-    deps = ["//test/proto:test_proto"],
+    deps = ["//proto:test_proto"],
 )
 
 scala_binary(
@@ -521,7 +522,7 @@ scalapb_proto_library(
     visibility = ["//visibility:public"],
     deps = [
         ":HelloLib",
-        "//test/proto:test2",
+        "//proto:test2",
     ],
 )
 

@@ -1,12 +1,12 @@
-load("//thrift:thrift.bzl", "thrift_library")
+load("@io_bazel_rules_scala//thrift:thrift.bzl", "thrift_library")
 
 thrift_library(
     name = "thrift",
     srcs = ["Thrift1.thrift"],
     visibility = ["//visibility:public"],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_a",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/thrift2:thrift2_b",
     ],
 )
 

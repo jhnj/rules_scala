@@ -15,13 +15,13 @@
 package scalarules.test
 
 object ResourcesStripScalaLib {
-  def getGreetings() = get("/src/main/resources/scalarules/test/more-hellos")
+  def getGreetings() = List("TODO")//get("/src/main/resources/scalarules/test/more-hellos")
 
-  def getFarewells = get("/src/main/resources/scalarules/test/more-byes")
+  def getFarewells = List("TODO")//get("/src/main/resources/scalarules/test/more-byes")
 
   def getData = get("/data/more.txt")
 
-  def getGeneratedHello = get("/src/main/resources/scalarules/test/generated-hello.txt")
+  def getGeneratedHello = List("TODO")//get("/src/main/resources/scalarules/test/generated-hello.txt")
 
   private def get(s: String): List[String] =
     scala.io.Source

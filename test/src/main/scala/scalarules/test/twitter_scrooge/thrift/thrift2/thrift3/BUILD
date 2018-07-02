@@ -1,5 +1,5 @@
-load("//thrift:thrift.bzl", "thrift_library")
-load("//twitter_scrooge:twitter_scrooge.bzl", "scrooge_scala_import")
+load("@io_bazel_rules_scala//thrift:thrift.bzl", "thrift_library")
+load("@io_bazel_rules_scala//twitter_scrooge:twitter_scrooge.bzl", "scrooge_scala_import")
 
 thrift_library(
     name = "thrift3",

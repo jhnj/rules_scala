@@ -1,4 +1,4 @@
-load("//thrift:thrift.bzl", "thrift_library")
+load("@io_bazel_rules_scala//thrift:thrift.bzl", "thrift_library")
 
 java_import(
     name = "barejar",
@@ -13,7 +13,7 @@ thrift_library(
     ],
     visibility = ["//visibility:public"],
     deps = [
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_1",
-        "//test/src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_2",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_1",
+        "//src/main/scala/scalarules/test/twitter_scrooge/thrift/bare_jar_thrifts/bare_jar_2",
     ],
 )

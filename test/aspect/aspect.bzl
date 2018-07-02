@@ -22,22 +22,22 @@ test_aspect = aspect(
 def _rule_impl(ctx):
   expected_deps = {
       "scala_library": [
-          "//test/aspect:scala_library",
+          "//aspect:scala_library",
           "@io_bazel_rules_scala_scala_library//:io_bazel_rules_scala_scala_library",
       ],
       "scala_test": [
-          "//test/aspect:scala_test",
+          "//aspect:scala_test",
           "@io_bazel_rules_scala_scala_library//:io_bazel_rules_scala_scala_library",
           "@io_bazel_rules_scala_scalatest//:io_bazel_rules_scala_scalatest",
       ],
       "scala_junit_test": [
-          "//test/aspect:scala_junit_test",
+          "//aspect:scala_junit_test",
           "@io_bazel_rules_scala_scala_library//:io_bazel_rules_scala_scala_library",
           "@io_bazel_rules_scala_junit_junit//jar:jar",
           "@io_bazel_rules_scala_org_hamcrest_hamcrest_core//jar:jar",
       ],
       "scala_specs2_junit_test": [
-          "//test/aspect:scala_specs2_junit_test",
+          "//aspect:scala_specs2_junit_test",
           "@io_bazel_rules_scala_scala_library//:io_bazel_rules_scala_scala_library",
           "@io_bazel_rules_scala_junit_junit//jar:jar",
           "@io_bazel_rules_scala_org_hamcrest_hamcrest_core//jar:jar",
