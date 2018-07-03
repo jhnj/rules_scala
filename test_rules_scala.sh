@@ -802,13 +802,13 @@ runner=$(get_test_runner "${1:-local}")
 
 cd test
 $runner bazel build ...
-$runner bazel build "... --all_incompatible_changes"
+#$runner bazel build "... --all_incompatible_changes"
 $runner bazel test ...
 cd ..
 $runner bazel test third_party/...
 cd test
 $runner bazel build "... --strict_java_deps=ERROR"
-$runner bazel build "... --strict_java_deps=ERROR --all_incompatible_changes"
+#$runner bazel build "... --strict_java_deps=ERROR --all_incompatible_changes"
 $runner bazel test "... --strict_java_deps=ERROR"
 $runner bazel run src/main/scala/scalarules/test/twitter_scrooge:justscrooges
 $runner bazel run :JavaBinary
