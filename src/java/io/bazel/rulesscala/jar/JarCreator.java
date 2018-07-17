@@ -110,7 +110,7 @@ public class JarCreator extends JarHelper {
    *
    * @param directory the directory to add to the jar
    */
-  public void addDirectory(final Path directory) {
+  public void addDirectory(Path directory) {
     System.out.println(System.getProperty("java.version"));
     if (!Files.exists(directory)) {
       throw new IllegalArgumentException("directory does not exist: " + directory);
