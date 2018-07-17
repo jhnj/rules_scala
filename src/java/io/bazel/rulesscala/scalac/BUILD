@@ -3,6 +3,10 @@ java_binary(
     srcs = [
         "@io_bazel_rules_scala//src/java/io/bazel/rulesscala/scalac:scalac_files",
     ],
+    javacopts = [
+        "-source 1.8",
+        "-target 1.8",
+    ],
     main_class = "io.bazel.rulesscala.scalac.ScalaCInvoker",
     visibility = ["//visibility:public"],
     deps = [
